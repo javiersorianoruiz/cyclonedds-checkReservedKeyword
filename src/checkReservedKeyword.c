@@ -3,13 +3,17 @@
 
 void foo(int param)
 {
-    if (param)
+    if (param==0)
     {
-        printf("foo param != 0\n");
+        printf("foo param == 0\n");
+    }
+    else if (param < 0)
+    {
+        printf("foo param < 0\n");
     }
     else
     {
-        printf("foo param == 0\n");
+        printf("foo param > 0\n");
     }
 }
 
