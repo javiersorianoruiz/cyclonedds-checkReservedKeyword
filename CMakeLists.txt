@@ -12,9 +12,9 @@ get_directory_property(sources_function DIRECTORY src DEFINITION sources_functio
 MESSAGE(STATUS "sources_function : ${sources_function}")
 
 #get source files of testing function (CXX files)
-#add_subdirectory(test)
-#get_directory_property(sources_testing DIRECTORY src DEFINITION sources_testing)
-#MESSAGE(STATUS "sources_testing : ${sources_testing}")
+add_subdirectory(test)
+get_directory_property(sources_testing DIRECTORY src DEFINITION sources_testing)
+MESSAGE(STATUS "sources_testing : ${sources_testing}")
 
 
 enable_testing()
