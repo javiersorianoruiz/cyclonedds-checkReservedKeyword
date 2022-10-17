@@ -5,7 +5,14 @@ extern "C" {
 }
 
 TEST(checkReservedKeyword_TS, ok_param_equal_0) {
-    ASSERT_EQ(foo(0), 0);
+    if (true)
+    {
+        ASSERT_EQ(foo(0), 0);
+    }
+    else
+    {
+        ASSERT_EQ(foo(0), 0);
+    }
 }
 
 TEST(checkReservedKeyword_TS, _param_equal_1) {

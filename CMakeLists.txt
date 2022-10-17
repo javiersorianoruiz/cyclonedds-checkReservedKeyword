@@ -12,18 +12,17 @@ get_directory_property(sources_function DIRECTORY src DEFINITION sources_functio
 MESSAGE(STATUS "sources_function : ${sources_function}")
 
 #get source files of testing function (CXX files)
-add_subdirectory(test)
-get_directory_property(sources_testing DIRECTORY src DEFINITION sources_testing)
+add_subdirectory(test) 
+get_directory_property(sources_testing DIRECTORY test DEFINITION sources_testing)
 MESSAGE(STATUS "sources_testing : ${sources_testing}")
 
 
 enable_testing()
 
-OPTION(ENABLE_COVERAGE "Enable GCov coverage analysis (defines a 'coverage'
-target and enforces static build of miind)" ON)
+OPTION(ENABLE_COVERAGE "Enable GCov coverage analysis" ON)
 
 set (EXTRA_LIBRARIES
-    gtest 
+    gtest
     pthread
     )
 
@@ -37,7 +36,7 @@ IF (ENABLE_COVERAGE)
 
     #equivalent to: add_compile_options("--coverage") 
     #set(CMAKE_CXX_FLAGS "-std=gnu++17 -fno-exceptions -Wall -Werror -Wconversion -Wno-sign-conversion -Wno-sign-compare -pthread -g --coverage -pthread")
-    #set(CMAKE_CXX_FLAGS "-std=gnu++17 -ggdb3 -Wall -fprofile-arcs -ftest-coverage -fPIC -O0 -Wno-deprecated-declarations")
+    #set(CMAKE_CXX_FLAGS "-ggdb3 -Wall -fprofile-arcs -ftest-coverage -fPIC -O0 -Wno-deprecated-declarations")
     #set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -ggdb3 -Wall -Wno-deprecated-declarations")
     #set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}  -Wno-deprecated-declarations ")
 
@@ -48,7 +47,5 @@ ENDIF()
 
 MESSAGE(STATUS "EXTRA_LIBRARIES : ${EXTRA_LIBRARIES}")
 
-
-
-add_executable(test_function ${sources_function} test/test.cpp test/main.cpp)
+add_executable(test_function ${sources_function} ${sources_testing})
 target_link_libraries(test_function ${EXTRA_LIBRARIES})
