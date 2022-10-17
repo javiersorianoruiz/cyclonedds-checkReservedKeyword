@@ -1,0 +1,2 @@
+# cyclonedds-checkReservedKeyword
+isolated implementation checkReservedKeyword for cyclonedds
