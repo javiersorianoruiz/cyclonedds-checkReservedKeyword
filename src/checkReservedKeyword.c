@@ -18,7 +18,7 @@ int foo(int param)
         printf("foo param > 0\n");
     }
 
-    print("End foo\n");
+    print("***** End foo *****\n");
 
     return -1;
 }
