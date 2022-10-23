@@ -3,7 +3,7 @@
 
 int foo(int param)
 {
-    printf("Cambio desde VS Code en la rama main\n");
+    printf("Cambio desde VS Code en la rama nueva_rama_vs_code\n");
     if (param==0)
     {
         printf("foo param == 0\n");
