@@ -3,6 +3,7 @@
 
 int foo(int param)
 {
+    printf("Primer cambio con GitLens instalado\n");
     printf("Cambio desde VS Code en la rama nueva_rama_vs_code, cambio 3\n");
     if (param==0)
     {
