@@ -3,6 +3,7 @@
 
 int foo(int param)
 {
+    printf("Hago cambio en una rama sin traer los de la main primero y fuerzo conflicto\n");
     printf("Cambio desde VS Code en la rama nueva_rama_vs_code, cambio 3\n");
     if (param==0)
     {
